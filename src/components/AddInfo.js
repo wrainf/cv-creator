@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import Overview from "./Overview";
+import uniqid from "uniqid";
 
 class AddInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      info: {text: ''},
+      info: {text: '', id: uniqid()},
       infos: [],
     }
 
@@ -15,15 +17,17 @@ class AddInfo extends Component {
     this.setState({
       info: {
         text: e.target.value,
+        id: this.state.info.id,
       }
     })
   }
 
   addInfo(){
     this.setState({
-      infos: this.state.infos.concat(this.state.info.text),
+      infos: this.state.infos.concat(this.state.info),
       info:{
         text: '',
+        id: uniqid(),
       },
     })
     console.log(this.state);
@@ -33,9 +37,10 @@ class AddInfo extends Component {
   render() {
     return (
       <div>
-        <div>Add Info</div>
-        <input type="text" onChange={this.setNewInfo}/>
+        <div>{this.props.title}</div>
+        <input type="text" onChange={this.setNewInfo} value={this.state.info.text}/>
         <button onClick={this.addInfo}>Add</button>
+        <Overview infos={this.state.infos}/>
       </div>
     )
   }
