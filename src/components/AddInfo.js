@@ -38,9 +38,10 @@ class AddInfo extends Component {
     return (
       <div>
         <div>{this.props.title}</div>
+        <Overview infos={this.state.infos}/>
         <input type="text" onChange={this.setNewInfo} value={this.state.info.text}/>
         <button onClick={this.addInfo}>Add</button>
-        <Overview infos={this.state.infos}/>
+        
       </div>
     )
   }
