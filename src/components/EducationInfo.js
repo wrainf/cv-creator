@@ -13,7 +13,7 @@ class EducationaInfo extends Component {
           <h4 contentEditable='true'>Course</h4>
           <h4 contentEditable='true'>Expected Graduation:</h4>
         </div>
-        <li contentEditable='true'>Relevant Courses</li>
+        <li contentEditable='true' key={'courses'}>Relevant Courses</li>
       </div>
       
     )
