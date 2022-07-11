@@ -6,12 +6,12 @@ class EducationaInfo extends Component {
       <div id="education-section">
         <h2 contentEditable='true' >Education</h2>
         <div>
-          <p contentEditable='true'>University</p>
-          <p contentEditable='true'>Location</p>
+          <h3 contentEditable='true'>University</h3>
+          <h3 contentEditable='true'>Location</h3>
         </div>
         <div>
-          <p contentEditable='true'>Course</p>
-          <p contentEditable='true'>Expected Graduation:</p>
+          <h4 contentEditable='true'>Course</h4>
+          <h4 contentEditable='true'>Expected Graduation:</h4>
         </div>
         <li contentEditable='true'>Relevant Courses</li>
       </div>
