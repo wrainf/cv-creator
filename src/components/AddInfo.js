@@ -27,52 +27,88 @@ class AddInfo extends Component {
     this.setState({
       info: {
         title: e.target.value,
+        role: this.state.info.role,
+        duration: this.state.info.duration,
+        description:this.state.info.description ,
+        achievement: this.state.info.achievement,
+        lesson: this.state.info.achievement,
+        id: this.state.info.id,
       }
-    })
-  }
+    });
+  };
 
   setNewRole = (e) => {
     this.setState({
       info: {
+        title: this.state.info.title,
         role: e.target.value,
+        duration: this.state.info.duration,
+        description: this.state.info.description,
+        achievement: this.state.info.achievement,
+        lesson: this.state.info.lesson,
+        id: this.state.info.id,
       }
-    })
-  }
+    });
+  };
 
   setNewDuration = (e) => {
     this.setState({
       info: {
+        title: this.state.info.title,
+        role: this.state.info.role,
         duration: e.target.value,
+        description: this.state.info.description,
+        achievement: this.state.info.achievement,
+        lesson: this.state.info.lesson,
+        id: this.state.info.id,
       }
-    })
-  }
+    });
+  };
 
   setNewDesc = (e) => {
     this.setState({
       info: {
+        title: this.state.info.title,
+        role: this.state.info.role,
+        duration: this.state.info.duration,
         description: e.target.value,
+        achievement: this.state.info.achievement,
+        lesson: this.state.info.lesson,
+        id: this.state.info.id,
       }
-    })
-  }
+    });
+  };
 
   setNewAchievement = (e) => {
     this.setState({
       info: {
+        title: this.state.info.title,
+        role: this.state.info.role,
+        duration: this.state.info.duration,
+        description: this.state.info.description,
         achievement: e.target.value,
-      }
-    })
-  }
+        lesson: this.state.info.lesson,
+        id: this.state.info.id,
+      },
+    });
+  };
 
   setNewLesson = (e) => {
     this.setState({
       info: {
+        title: this.state.info.title,
+        role: this.state.info.role,
+        duration: this.state.info.duration,
+        description: this.state.info.description,
+        achievement: this.state.info.achievement,
         lesson: e.target.value,
         id: this.state.info.id,
       }
-    })
-  }
+    });
+  };
 
-  addInfo(){
+  addInfo(e){
+    e.preventDefault();
     this.setState({
       infos: this.state.infos.concat(this.state.info),
       info:{
@@ -97,7 +133,7 @@ class AddInfo extends Component {
         <form id="add-info">
           <div>
             <label htmlFor="title">Title</label>
-            <input id='title' type="text" onChange={this.setNewTitle} value={this.state.info.title} placeholder='e.g Company A'/>
+            <input id='title' type="text" value={this.state.info.title} onChange={this.setNewTitle} placeholder='e.g Company A'/>
           </div>
 
           <div>
@@ -118,6 +154,7 @@ class AddInfo extends Component {
           </div>
           <button type="submit" onClick={this.addInfo}>Add</button>
         </form>
+        
         
         
       </div>
