@@ -6,6 +6,7 @@ class AddInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      form: false,
       info: {
         title: '',
         role: '',
@@ -124,39 +125,51 @@ class AddInfo extends Component {
     console.log(this.state);
   }
 
+  toggleForm = () => {
+    this.setState({
+      form: !this.state.form,
+    });
+  }
+
+  form = () => {
+    return <form id="add-info">
+    <div>
+      <label htmlFor="title">Title</label>
+      <input id='title' type="text" value={this.state.info.title} onChange={this.setNewTitle} placeholder='e.g Company A'/>
+    </div>
+
+    <div>
+      <div>
+        <label htmlFor="role">Role</label>
+        <input id="role" type="text" onChange={this.setNewRole} value={this.state.info.role} placeholder='e.g Intern'/>
+      </div>
+      <div>
+        <label htmlFor="duration">Duration</label>
+        <input id="duration" type="text" onChange={this.setNewDuration} value={this.state.info.duration} placeholder='e.g May 2022 - July 2022'/>
+      </div>
+    </div>
+
+    <div>
+      <input type="text" onChange={this.setNewDesc} value={this.state.info.description} placeholder='What you did'/>
+      <input type="text" onChange={this.setNewAchievement} value={this.state.info.achievement} placeholder='Achievements'/>
+      <input type="text" onChange={this.setNewLesson} value={this.state.info.lesson} placeholder='Lessons learnt'/>
+    </div>
+    <button type="submit" onClick={this.addInfo}>Add</button>
+</form>
+  }
+    
+
+  
 
   render() {
     return (
       <div>
-        <div>{this.props.title}</div>
+        <div>
+          <div>{this.props.title}</div>
+          <button onClick={this.toggleForm}>Toggle Form</button>
+        </div>
         <Overview infos={this.state.infos}/>
-        <form id="add-info">
-          <div>
-            <label htmlFor="title">Title</label>
-            <input id='title' type="text" value={this.state.info.title} onChange={this.setNewTitle} placeholder='e.g Company A'/>
-          </div>
-
-          <div>
-            <div>
-              <label htmlFor="role">Role</label>
-              <input id="role" type="text" onChange={this.setNewRole} value={this.state.info.role} placeholder='e.g Intern'/>
-            </div>
-            <div>
-              <label htmlFor="duration">Duration</label>
-              <input id="duration" type="text" onChange={this.setNewDuration} value={this.state.info.duration} placeholder='e.g May 2022 - July 2022'/>
-            </div>
-          </div>
-
-          <div>
-            <input type="text" onChange={this.setNewDesc} value={this.state.info.description} placeholder='What you did'/>
-            <input type="text" onChange={this.setNewAchievement} value={this.state.info.achievement} placeholder='Achievements'/>
-            <input type="text" onChange={this.setNewLesson} value={this.state.info.lesson} placeholder='Lessons learnt'/>
-          </div>
-          <button type="submit" onClick={this.addInfo}>Add</button>
-        </form>
-        
-        
-        
+        {this.state.form ? this.form() : null}
       </div>
     )
   }
