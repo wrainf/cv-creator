@@ -2,6 +2,7 @@ import { Component } from "react";
 import AddInfo from "./components/AddInfo";
 import PersonalInfo from "./components/PersonalInfo"
 import EducationInfo from "./components/EducationInfo"
+import Skills from './components/Skills'
 import './App.css'
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         <EducationInfo/>
         <AddInfo title='WORK'/>
         <AddInfo title='PERSONAL PROJECTS'/>
+        <Skills/>
         
       </div>
     
