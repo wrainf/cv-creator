@@ -1,0 +1,97 @@
+h1,h2,h3,h4,p {
+  margin: 0px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background-color: #ececec;
+}
+
+
+#content {
+  background-color: white;
+  width: 40rem;
+  height: 90vh;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#content > div {
+  width: inherit;
+}
+
+#content:first-child { 
+  display: flex;
+  flex-direction: column;
+}
+
+#name {
+  text-align: center;
+}
+
+#personal-details { 
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+#education-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#university-info,
+#course-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  border-bottom: 2px solid black;
+}
+
+h4 {
+  font-weight: 500;
+  font-style: italic;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+}
+
+#info div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#add-info {
+  box-shadow: 0px 0px 10px 0px #ececec;
+  padding: 30px;
+  border-radius: 30px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+#info-detail-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#info-detail-wrapper > div,
+#title-wrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
