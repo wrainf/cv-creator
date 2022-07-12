@@ -14,7 +14,7 @@ const Overview = (props) => {
               <h4>{info.duration}</h4>
             </div>
             <ul>
-              <li key={info.id}>{info.description}</li>
+              <li key={info.id+'1'}>{info.description}</li>
               <li key={info.id+'2'}>{info.achievement}</li>
               <li key={info.id+'3'}>{info.lesson}</li>
             </ul>
