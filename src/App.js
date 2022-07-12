@@ -12,6 +12,7 @@ class App extends Component {
 
     return(
       <div id="content">
+        <p id="legend">Press Ctrl+P to Save</p>
         <PersonalInfo/>
         <EducationInfo/>
         <AddInfo title='WORK'/>
