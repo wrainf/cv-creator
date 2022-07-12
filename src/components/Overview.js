@@ -7,17 +7,17 @@ const Overview = (props) => {
     <div>
       {infos.map((info) => {
         return (
-          <div>
+          <div id="info">
             <h3>{info.title}</h3>
             <div>
               <h4>{info.role}</h4>
               <h4>{info.duration}</h4>
             </div>
-            <ul>
+            
               <li key={info.id+'1'}>{info.description}</li>
               <li key={info.id+'2'}>{info.achievement}</li>
               <li key={info.id+'3'}>{info.lesson}</li>
-            </ul>
+          
           </div>
         );
       })}
