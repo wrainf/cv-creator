@@ -133,12 +133,12 @@ class AddInfo extends Component {
 
   form = () => {
     return <form id="add-info">
-    <div>
+    <div id="title-wrapper">
       <label htmlFor="title">Title</label>
       <input id='title' type="text" value={this.state.info.title} onChange={this.setNewTitle} placeholder='e.g Company A'/>
     </div>
 
-    <div>
+    <div id="info-detail-wrapper">
       <div>
         <label htmlFor="role">Role</label>
         <input id="role" type="text" onChange={this.setNewRole} value={this.state.info.role} placeholder='e.g Intern'/>
@@ -149,11 +149,13 @@ class AddInfo extends Component {
       </div>
     </div>
 
-    <div>
-      <input type="text" onChange={this.setNewDesc} value={this.state.info.description} placeholder='What you did'/>
-      <input type="text" onChange={this.setNewAchievement} value={this.state.info.achievement} placeholder='Achievements'/>
-      <input type="text" onChange={this.setNewLesson} value={this.state.info.lesson} placeholder='Lessons learnt'/>
-    </div>
+    <label htmlFor="did">What did you do?</label>
+    <input id='did' type="text" onChange={this.setNewDesc} value={this.state.info.description} placeholder='What you did'/>
+    <label htmlFor="achievement">What did you achieve?</label>
+    <input id="achieve" type="text" onChange={this.setNewAchievement} value={this.state.info.achievement} placeholder='Achievements'/>
+    <label htmlFor="lesson">What did you learn?</label>
+    <input id="lesson" type="text" onChange={this.setNewLesson} value={this.state.info.lesson} placeholder='Lessons learnt'/>
+    
     <button type="submit" onClick={this.addInfo}>Add</button>
 </form>
   }
@@ -165,7 +167,7 @@ class AddInfo extends Component {
     return (
       <div>
         <div>
-          <div>{this.props.title}</div>
+          <h2>{this.props.title}</h2>
           <button onClick={this.toggleForm}>Toggle Form</button>
         </div>
         <Overview infos={this.state.infos}/>
