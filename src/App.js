@@ -13,10 +13,9 @@ class App extends Component {
       <div id="content">
         <PersonalInfo/>
         <EducationInfo/>
-        <div id="add-info-section">
-          <AddInfo title='WORK'/>
-          <AddInfo title='PERSONAL PROJECTS'/>
-        </div>
+        <AddInfo title='WORK'/>
+        <AddInfo title='PERSONAL PROJECTS'/>
+        
       </div>
     
     );
